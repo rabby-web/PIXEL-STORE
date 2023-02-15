@@ -37,13 +37,13 @@
                 </li>
                 <li class="mr-10 relative">
                     <span class="absolute right-[-45px] top-[-20px]"><div class="badge badge-secondary">+99</div></span>
-                    <span><i class="fa-solid fa-cart-shopping  text-yellow-500"></i></span>
+                    <label for="my-drawer-4" class="drawer-button"><span><i class="fa-solid fa-cart-shopping  text-yellow-500"></i></span></label>
                 </li>
             </ul>
           </div>
           <div class="dropdown dropdown-end lg:hidden">
             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-                <i class="fa-solid fa-bars text-2xl"></i>
+                <i class="fa-solid fa-bars text-2xl text-white"></i>
             </label>
             <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
               <li><a>
@@ -59,7 +59,7 @@
                     <span>Recycle Bin</span>
               </a></li>
               <li><a>
-                  <span><i class="fa-solid fa-cart-shopping  text-yellow-500"></i></span>
+                  <label for="my-drawer-4" class="drawer-button"><span><i class="fa-solid fa-cart-shopping  text-yellow-500"></i></span></label>
                   <span"><div class="badge badge-secondary">+99</div></span>
               </a></li>
             </ul>
@@ -67,5 +67,23 @@
         </div>
       </div>
     <!-- navbar end -->
+
+    <!-- drawer start -->
+    <div class="drawer drawer-end">
+      <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <!-- Page content here -->
+        <!-- Page content end -->
+      </div> 
+      <div class="drawer-side">
+        <label for="my-drawer-4" class="drawer-overlay"></label>
+        <ul class="menu p-4 w-80 bg-base-100 text-base-content">
+          <!-- Sidebar content here -->
+          <li><a>Sidebar Item 1</a></li>
+          <li><a>Sidebar Item 2</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- drawer end -->
 </body>
 </html>
