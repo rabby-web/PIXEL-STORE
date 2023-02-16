@@ -1,13 +1,13 @@
-// fetch("../data.json")
-// .then(res => res.json())
-// .then(data => displayData(data))
+fetch("./data.json")
+.then(res => res.json())
+.then(data => displayData(data))
 
-const phoneData = async () => {
-  const res = await fetch("../data.json");
-  const data = await res.json();
-  displayData(data);
-}
-phoneData();
+// const phoneData = async () => {
+//   const res = await fetch("../data.json");
+//   const data = await res.json();
+//   displayData(data);
+// }
+// phoneData();
 
 function displayData(data){
     const cardContainer = document.getElementById('homepage-content');
