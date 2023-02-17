@@ -66,11 +66,17 @@ function handleModal(id){
   product.appendChild(modalContainer)
 }
 let count = 0;
+let newPrice = 0;
+let tax = 0;
+let total = 0;
 function handleByNow(id){
   // count++
   count = count + 1;
   const product = dataSet.find((item) => item.id === id);
   const {name, price, img} = product;
+  newPrice = newPrice + product.price; 
+  tax = newPrice * 0.1;
+  total = newPrice + tax;
   const cardContainer = document.getElementById('card-item-container');
   const div = document.createElement('div');
   div.innerHTML = `
@@ -84,4 +90,12 @@ function handleByNow(id){
   cardContainer.appendChild(div);
   document.getElementById('badge-count').innerText = count;
   document.getElementById('badge-count-sm').innerText = count;
+  document.getElementById('product-count').innerText = count;
+  document.getElementById('price').innerText = newPrice.toFixed(2);
+  document.getElementById('tax-count').innerText = tax.toFixed(2);
+  document.getElementById('total').innerText = total.toFixed(2);
+
+}
+function handleClear(){
+  document.getElementById('card-item-container').innerHTML = '';
 }
