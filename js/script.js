@@ -99,3 +99,4 @@ function handleByNow(id){
 function handleClear(){
   document.getElementById('card-item-container').innerHTML = '';
 }
+// ------------
