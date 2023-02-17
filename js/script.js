@@ -39,7 +39,7 @@ function displayData(data){
           <h2 class="text-lg">Price: <span>${price}</span></h2>
           <div class="secondary flex justify-between">
             <label onclick="handleModal('${id}')" for="my-modal-3" class="btn btn-primary btn-outline"><i class="fa-solid fa-circle-info mr-2"></i>Details</label>
-            <button class="btn btn-secondary btn-outline"><i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
+            <button onclick="handleByNow('${id}')" class="btn btn-secondary btn-outline"><i class="fa-solid fa-bag-shopping mr-2"></i>Buy Now</button>
           </div>
         </div>
         `;
@@ -64,4 +64,24 @@ function handleModal(id){
       </div>
   `;
   product.appendChild(modalContainer)
+}
+let count = 0;
+function handleByNow(id){
+  // count++
+  count = count + 1;
+  const product = dataSet.find((item) => item.id === id);
+  const {name, price, img} = product;
+  const cardContainer = document.getElementById('card-item-container');
+  const div = document.createElement('div');
+  div.innerHTML = `
+    <div class="bg-slate-500 rounded-lg border-[2px] border-slate-900 flex items-center justify-between px-1">
+      <img src="${img}" class="w-[15%] p-1" alt="Shoes" />
+      <p>${name}</p>
+      <p class="border-[2px] rounded-lg px-[10px] py-[1px]">1</p>
+      <i class="fa-solid fa-trash  text-red-500 text-xl p-1 cursor-pointer"></i>
+    </div>
+  `;
+  cardContainer.appendChild(div);
+  document.getElementById('badge-count').innerText = count;
+  document.getElementById('badge-count-sm').innerText = count;
 }
